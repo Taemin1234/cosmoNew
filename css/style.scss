@@ -1,0 +1,169 @@
+%flex-start {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+%flex-end {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+%flex-center {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+%flex-spacebetween {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+%flex-spacearound {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+}
+
+%li-navbar {
+  width: 200px;
+  padding: 0 50px;
+  text-align: center;
+}
+
+$main-color1: #01b1ec;
+$main-color2: #001f66;
+
+body {
+  background-color: grey;
+}
+
+.header-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 80px;
+
+  background-color: #fff;
+}
+
+.header-top-wrap {
+  @extend %flex-spacebetween;
+
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.header-logo {
+  width: 200px;
+}
+
+.menu-nav {
+  min-width: 650px;
+  height: 100%;
+
+  ul {
+    @extend %flex-center;
+    height: 100%;
+  }
+
+  li {
+    @extend %li-navbar;
+
+    position: relative;
+    height: 100%;
+
+    font-size: 18px;
+    font-weight: 600;
+
+    line-height: 80px;
+
+    cursor: pointer;
+
+    &:before {
+      content: "";
+      width: 0;
+      height: 3px;
+      background-color: $main-color1;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+
+      transition: all 0.5s;
+    }
+
+    &:after {
+      content: "";
+      width: 0;
+      height: 3px;
+      background-color: $main-color1;
+      position: absolute;
+      bottom: 0;
+      right: 50%;
+
+      transition: all 0.5s;
+    }
+
+    &:hover:before {
+      width: 40%;
+    }
+
+    &:hover:after {
+      width: 40%;
+    }
+  }
+}
+
+.header-slide {
+  position: fixed;
+
+  top: 80px;
+  left: 0;
+
+  width: 100%;
+  padding-bottom: 20px;
+
+  background-color: #fff;
+  border-top: solid 1px #000;
+}
+
+.lnb {
+  @extend %flex-end;
+  align-items: flex-start;
+
+  max-width: 1300px;
+  margin: 0 auto;
+
+  ul {
+    height: 100%;
+  }
+
+  li {
+    @extend %li-navbar;
+    font-size: 18px;
+    padding: 15px 0;
+  }
+}
