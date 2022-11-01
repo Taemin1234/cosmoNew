@@ -3,8 +3,11 @@ $(function () {
   slickJs(); // 메인화면 슬라이드
 });
 
+let wd = $(window);
+
 function webNavbar() {
   let headSlide = $(".header-slide");
+  let hdTop = $(".header-top");
 
   $(".wNav-btn").on("mouseover", function () {
     headSlide.stop().slideDown();
@@ -12,6 +15,17 @@ function webNavbar() {
 
   headSlide.on("mouseleave", function () {
     headSlide.stop().slideUp();
+  });
+
+  wd.on("mousewheel", function (e) {
+    var wheel = e.originalEvent.wheelDelta;
+
+    if (wheel >= 80) {
+      hdTop.removeClass("header-up").addClass("header-down");
+    } else {
+      hdTop.removeClass("header-down").addClass("header-up");
+      headSlide.hide();
+    }
   });
 }
 
