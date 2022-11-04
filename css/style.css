@@ -147,6 +147,10 @@
 }
 
 /* 내용 */
+section {
+  background-color: #181818;
+}
+
 .full {
   width: 100%;
   height: 100vh;
@@ -213,13 +217,7 @@
   padding: 100px 0;
 }
 
-.business-line {
-  width: 31%;
-  height: 500px;
-  padding: 15px;
-  border-radius: 10px;
-  background-color: #01b1ec;
-}
-.business-line h3 {
-  color: #01b1ec;
+.page-title {
+  color: #fff;
+  font-size: 36px;
 }

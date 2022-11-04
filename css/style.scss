@@ -210,7 +210,7 @@ $sub-color4: #003bc4;
 /* 내용 */
 
 section {
-  //background-color: $main-color1;
+  background-color: #181818;
 }
 
 .full {
@@ -301,27 +301,7 @@ section {
   padding: 100px 0;
 }
 
-.business-line {
-  width: 31%;
-  height: 500px;
-  padding: 15px;
-
-  border-radius: 10px;
-
-  // background-image: radial-gradient(
-  //   circle 610px at 5.2% 51.6%,
-  //   $main-color2 0%,
-  //   rgba(7, 3, 53, 1) 97.5%
-  // );
-
-  background-color: $main-color1;
-
-  h3 {
-    color: $main-color1;
-  }
-
-  p,
-  a {
-    //color: #fff;
-  }
+.page-title {
+  color: #fff;
+  font-size: 36px;
 }
