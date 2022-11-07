@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.flex-start {
+.product-content-wrap, .product-tab-wrap, .flex-start {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -220,4 +220,57 @@ section {
 .page-title {
   color: #fff;
   font-size: 36px;
+}
+
+.product-wrap {
+  width: 100%;
+  height: 800px;
+}
+
+.product-tab-wrap {
+  width: 100%;
+  height: 200px;
+}
+
+.product-tab {
+  position: relative;
+  width: 33%;
+  height: 140px;
+  background-color: #fff;
+  border: solid 3px #000;
+}
+.product-tab span {
+  position: absolute;
+  width: 15%;
+  height: 25px;
+  background-color: #000;
+}
+.product-tab .btr-left {
+  top: -25px;
+  left: 20%;
+}
+.product-tab .btr-right {
+  top: -25px;
+  right: 20%;
+}
+.product-tab img {
+  position: absolute;
+  width: 30px;
+}
+.product-tab .ico-minus {
+  top: 10px;
+  left: 10%;
+}
+.product-tab .ico-plus {
+  top: 10px;
+  right: 10%;
+}
+.product-tab p {
+  font-size: 24px;
+  text-align: center;
+}
+
+.product-content-wrap {
+  width: 100%;
+  height: 600px;
 }
