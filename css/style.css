@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-.main-slide-wrap .slick-bar, .menu-nav ul, .flex-center {
+.product-line, .main-slide-wrap .slick-bar, .menu-nav ul, .flex-center {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -147,10 +147,6 @@
 }
 
 /* 내용 */
-section {
-  background-color: #181818;
-}
-
 .full {
   width: 100%;
   height: 100vh;
@@ -218,39 +214,43 @@ section {
 }
 
 .page-title {
-  color: #fff;
+  color: #000;
   font-size: 36px;
+  margin-bottom: 30px;
 }
 
 .product-wrap {
   width: 100%;
-  height: 800px;
 }
 
 .product-tab-wrap {
+  align-items: flex-end;
   width: 100%;
-  height: 200px;
+  height: 100px;
 }
 
 .product-tab {
   position: relative;
-  width: 33%;
-  height: 140px;
-  background-color: #fff;
+  width: 300px;
+  height: 70px;
+  background-image: linear-gradient(to bottom, #e60109 75%, #fff 10%, #e60109 15%);
   border: solid 3px #000;
+  cursor: pointer;
 }
 .product-tab span {
   position: absolute;
   width: 15%;
-  height: 25px;
+  height: 15px;
   background-color: #000;
+  border: solid 3px #000;
+  border-bottom: none;
 }
 .product-tab .btr-left {
-  top: -25px;
+  top: -18px;
   left: 20%;
 }
 .product-tab .btr-right {
-  top: -25px;
+  top: -18px;
   right: 20%;
 }
 .product-tab img {
@@ -258,19 +258,70 @@ section {
   width: 30px;
 }
 .product-tab .ico-minus {
-  top: 10px;
+  top: 15px;
   left: 10%;
 }
 .product-tab .ico-plus {
-  top: 10px;
+  top: 15px;
   right: 10%;
 }
 .product-tab p {
+  height: 100%;
   font-size: 24px;
   text-align: center;
+  color: #000;
+  line-height: 54px;
 }
 
 .product-content-wrap {
   width: 100%;
-  height: 600px;
+  height: 500px;
+  border: solid 3px #000;
+  border-top: none;
+  background-color: #181818;
+}
+
+.product-line {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+}
+.product-line img {
+  width: 50%;
+  max-height: 100%;
+}
+
+.pl-right {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  padding: 10px 0 10px 10px;
+}
+.pl-right .pl-text {
+  width: 80%;
+  margin: 0 auto;
+  font-size: 24px;
+  color: #fff;
+  line-height: 1.5;
+}
+.pl-right .showmore {
+  position: absolute;
+  width: 50%;
+  height: 70px;
+  border: solid 4px #000;
+  border-radius: 5px;
+  bottom: 96px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.pl-right .showmore a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  line-height: 60px;
+  cursor: pointer;
 }
