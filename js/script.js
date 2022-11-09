@@ -1,6 +1,7 @@
 $(function () {
   webNavbar(); // 웹페이지 상단바
   slickJs(); // 메인화면 슬라이드
+  product(); // 상품 소개
 });
 
 let wd = $(window);
@@ -36,4 +37,19 @@ function slickJs() {
     dotsClass: "slick-bar",
     adaptiveHeight: true,
   });
+}
+
+function product() {
+  let product = $(".product");
+
+  product.hover(
+    function () {
+      $(this).find(".pd-bg").addClass("pd-hover");
+      $(this).find(".product-text").addClass("pt-hover");
+    },
+    function () {
+      $(this).find(".pd-bg").removeClass("pd-hover");
+      $(this).find(".product-text").removeClass("pt-hover");
+    }
+  );
 }
