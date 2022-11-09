@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.product-content-wrap, .product-tab-wrap, .flex-start {
+.flex-start {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-.product-line, .main-slide-wrap .slick-bar, .menu-nav ul, .flex-center {
+.main-slide-wrap .slick-bar, .menu-nav ul, .flex-center {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -23,7 +23,7 @@
   align-items: center;
 }
 
-.header-top-wrap, .flex-spacebetween {
+.product-wrap, .header-top-wrap, .flex-spacebetween {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -143,10 +143,14 @@
   cursor: pointer;
 }
 .lnb li:hover {
-  color: #4d4d4d;
+  color: #01b1ec;
 }
 
 /* 내용 */
+section {
+  background-color: #181818;
+}
+
 .full {
   width: 100%;
   height: 100vh;
@@ -176,6 +180,7 @@
   border: none;
   font-size: 0;
 }
+
 .main-page {
   position: relative;
   width: 100%;
@@ -214,114 +219,117 @@
 }
 
 .page-title {
-  color: #000;
-  font-size: 36px;
+  color: #fff;
+  font-size: 48px;
   margin-bottom: 30px;
+}
+
+.business-main {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.business-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 52px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+  z-index: 5;
+}
+
+.bm-img {
+  position: absolute;
+  width: 50%;
+  height: 410px;
+  top: 46px;
+  right: 0;
+}
+.bm-img img {
+  width: 100%;
+  height: 100%;
 }
 
 .product-wrap {
   width: 100%;
 }
 
-.product-tab-wrap {
-  align-items: flex-end;
-  width: 100%;
-  height: 100px;
-}
-
-.product-tab {
+.product {
   position: relative;
-  width: 300px;
-  height: 70px;
-  background-image: linear-gradient(to bottom, #e60109 75%, #fff 10%, #e60109 15%);
-  border: solid 3px #000;
+  width: 30%;
+  height: 0;
+  padding-bottom: 30%;
+}
+.product a {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 10;
   cursor: pointer;
 }
-.product-tab span {
-  position: absolute;
-  width: 15%;
-  height: 15px;
-  background-color: #000;
-  border: solid 3px #000;
-  border-bottom: none;
-}
-.product-tab .btr-left {
-  top: -18px;
-  left: 20%;
-}
-.product-tab .btr-right {
-  top: -18px;
-  right: 20%;
-}
-.product-tab img {
-  position: absolute;
-  width: 30px;
-}
-.product-tab .ico-minus {
-  top: 15px;
-  left: 10%;
-}
-.product-tab .ico-plus {
-  top: 15px;
-  right: 10%;
-}
-.product-tab p {
-  height: 100%;
-  font-size: 24px;
-  text-align: center;
-  color: #000;
-  line-height: 54px;
-}
 
-.product-content-wrap {
-  width: 100%;
-  height: 500px;
-  border: solid 3px #000;
-  border-top: none;
-  background-color: #181818;
-}
-
-.product-line {
+.pd-bg {
+  position: absolute;
   width: 100%;
   height: 100%;
-  padding: 20px;
-}
-.product-line img {
-  width: 50%;
-  max-height: 100%;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  transition: all 0.5s;
 }
 
-.pl-right {
-  position: relative;
-  width: 50%;
-  height: 100%;
-  padding: 10px 0 10px 10px;
+.cathode-img {
+  background-image: url(../source/img/cathode.jpg);
 }
-.pl-right .pl-text {
-  width: 80%;
-  margin: 0 auto;
-  font-size: 24px;
-  color: #fff;
-  line-height: 1.5;
+
+.film-img {
+  background-image: url(../source/img/Release-Film.jpg);
 }
-.pl-right .showmore {
+
+.toner-img {
+  background-image: url(../source/img/toner-powder.jpg);
+}
+
+.product-text {
   position: absolute;
-  width: 50%;
-  height: 70px;
-  border: solid 4px #000;
-  border-radius: 5px;
-  bottom: 96px;
+  width: 65%;
+  height: 180px;
+  bottom: -120px;
   left: 50%;
   transform: translateX(-50%);
-}
-.pl-right .showmore a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  font-size: 20px;
-  color: #fff;
   text-align: center;
-  line-height: 60px;
-  cursor: pointer;
+  transition: all 0.5s;
+}
+.product-text span {
+  display: inline-block;
+  text-align: center;
+}
+.product-text .pt-title {
+  border: solid 2px #fff;
+  border-radius: 30px;
+  color: #fff;
+  padding: 10px 15px;
+  margin-bottom: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.product-text .pt-content {
+  line-height: 1.5;
+  color: #fff;
+}
+
+.pd-hover {
+  filter: opacity(0.6);
+}
+
+.pt-hover {
+  bottom: 130px;
 }

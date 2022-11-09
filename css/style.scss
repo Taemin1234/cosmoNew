@@ -205,7 +205,7 @@ $battery-low: #e60109;
     cursor: pointer;
 
     &:hover {
-      color: #4d4d4d;
+      color: $main-color1;
     }
   }
 }
@@ -213,7 +213,7 @@ $battery-low: #e60109;
 /* 내용 */
 
 section {
-  //background-color: #181818;
+  background-color: #181818;
 }
 
 .full {
@@ -254,9 +254,6 @@ section {
       border: none;
 
       font-size: 0;
-    }
-
-    .slick-active {
     }
   }
 }
@@ -305,155 +302,142 @@ section {
 }
 
 .page-title {
-  color: #000;
-  font-size: 36px;
+  color: #fff;
+  font-size: 48px;
 
   margin-bottom: 30px;
 }
 
-.product-wrap {
-  width: 100%;
-}
-
-.product-tab-wrap {
-  @extend %flex-start;
-  align-items: flex-end;
-  width: 100%;
-  height: 100px;
-}
-
-.product-tab {
+// business
+.business-main {
   position: relative;
-  width: 300px;
-  height: 70px;
+  width: 100%;
+  height: 400px;
+}
 
-  background-image: linear-gradient(
-    to bottom,
-    $battery-low 75%,
-    #fff 10%,
-    $battery-low 15%
-  );
+.business-title {
+  position: absolute;
 
-  //background-color: $battery-low;
-  border: solid 3px #000;
+  top: 0;
+  left: 0;
 
-  cursor: pointer;
+  font-size: 52px;
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.2;
+
+  z-index: 5;
+}
+
+.bm-img {
+  position: absolute;
+  width: 50%;
+  height: 410px;
+
+  top: 46px;
+  right: 0;
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+// product
+
+.product-wrap {
+  @extend %flex-spacebetween;
+  width: 100%;
+}
+
+.product {
+  position: relative;
+  width: 30%;
+  height: 0;
+  padding-bottom: 30%;
+
+  a {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    overflow: hidden;
+
+    z-index: 10;
+    cursor: pointer;
+  }
+}
+
+.pd-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+
+  transition: all 0.5s;
+}
+
+.cathode-img {
+  background-image: url(../source/img/cathode.jpg);
+}
+
+.film-img {
+  background-image: url(../source/img/Release-Film.jpg);
+}
+
+.toner-img {
+  background-image: url(../source/img/toner-powder.jpg);
+}
+
+.product-text {
+  position: absolute;
+  width: 65%;
+  height: 180px;
+
+  bottom: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  text-align: center;
+
+  transition: all 0.5s;
 
   span {
-    position: absolute;
-
-    width: 15%;
-    height: 15px;
-
-    background-color: #000;
-    border: solid 3px #000;
-    border-bottom: none;
-  }
-
-  .btr-left {
-    top: -18px;
-    left: 20%;
-  }
-
-  .btr-right {
-    top: -18px;
-    right: 20%;
-  }
-
-  img {
-    position: absolute;
-    width: 30px;
-  }
-
-  .ico-minus {
-    top: 15px;
-    left: 10%;
-  }
-
-  .ico-plus {
-    top: 15px;
-    right: 10%;
-  }
-
-  p {
-    height: 100%;
-    font-size: 24px;
+    display: inline-block;
     text-align: center;
-
-    color: #000;
-
-    line-height: 54px;
   }
-}
 
-.product-content-wrap {
-  @extend %flex-start;
-  width: 100%;
-  height: 500px;
+  .pt-title {
+    border: solid 2px #fff;
+    border-radius: 30px;
 
-  border: solid 3px #000;
-  border-top: none;
-
-  background-color: $sub-bg;
-}
-
-.product-line {
-  @extend %flex-center;
-
-  width: 100%;
-  height: 100%;
-
-  padding: 20px;
-
-  img {
-    width: 50%;
-    max-height: 100%;
-  }
-}
-
-.pl-right {
-  position: relative;
-  width: 50%;
-  height: 100%;
-
-  padding: 10px 0 10px 10px;
-
-  .pl-text {
-    width: 80%;
-    margin: 0 auto;
-
-    font-size: 24px;
+    //background-color: #fff;
     color: #fff;
 
+    padding: 10px 15px;
+    margin-bottom: 20px;
+
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .pt-content {
     line-height: 1.5;
+    color: #fff;
   }
+}
 
-  .showmore {
-    position: absolute;
-    width: 50%;
-    height: 70px;
+.pd-hover {
+  filter: opacity(0.6);
+}
 
-    border: solid 4px #000;
-    border-radius: 5px;
-
-    bottom: 96px;
-    left: 50%;
-    transform: translateX(-50%);
-
-    a {
-      display: block;
-      width: 100%;
-      height: 100%;
-
-      background-color: #000;
-
-      font-size: 20px;
-      color: #fff;
-
-      text-align: center;
-      line-height: 60px;
-
-      cursor: pointer;
-    }
-  }
+.pt-hover {
+  bottom: 130px;
 }
