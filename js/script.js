@@ -2,6 +2,8 @@ $(function () {
   webNavbar(); // 웹페이지 상단바
   slickJs(); // 메인화면 슬라이드
   product(); // 상품 소개
+  count(); // 숫자 올리기
+  newsList(); // 뉴스리스트
 });
 
 let wd = $(window);
@@ -52,4 +54,25 @@ function product() {
       $(this).find(".product-text").removeClass("pt-hover");
     }
   );
+}
+
+function count() {
+  $(".counter").counterUp({
+    delay: 10,
+    time: 1000,
+  });
+}
+
+function newsList() {
+  let newsList = $(".news-content-wrap ul li");
+
+  newsList.mouseover(function () {
+    $(this).find(".newsLine").hide();
+    $(this).find(".newsActive").stop().slideDown();
+  });
+
+  newsList.mouseout(function () {
+    $(this).find(".newsLine").show();
+    $(this).find(".newsActive").stop().slideUp();
+  });
 }
