@@ -66,13 +66,14 @@ function count() {
 function newsList() {
   let newsList = $(".news-content-wrap ul li");
 
-  newsList.mouseover(function () {
-    $(this).find(".newsLine").hide();
-    $(this).find(".newsActive").stop().slideDown();
-  });
-
-  newsList.mouseout(function () {
-    $(this).find(".newsLine").show();
-    $(this).find(".newsActive").stop().slideUp();
+  newsList.on("click", function () {
+    if ($(this).hasClass("on")) {
+      //$(this).removeClass("on");
+      //$(this).find(".news-open").slideUp();
+    } else {
+      $(this).addClass("on");
+      newsList.not(this).removeClass("on");
+      $(this).find(".news-open").slideDown();
+    }
   });
 }
