@@ -7,7 +7,7 @@
   align-items: center;
 }
 
-.lnb, .flex-end {
+.footer-link, .footer-btn-wrap, .lnb, .flex-end {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-.main-slide-wrap .slick-bar, .menu-nav ul, .flex-center {
+.move-banner, .main-slide-wrap .slick-bar, .menu-nav ul, .flex-center {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -23,7 +23,7 @@
   align-items: center;
 }
 
-.newsActive, .news-line, .news-wrap, .number-wrap, .product-wrap, .header-top-wrap, .flex-spacebetween {
+.footer-wrap, .news-open .news-open-sub, .news-line, .news-wrap, .number-wrap, .product-wrap, .header-top-wrap, .flex-spacebetween {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -31,7 +31,7 @@
   align-items: center;
 }
 
-.newsActive .news-txt, .newsActive .news-line, .flex-column {
+.news-open .news-txt, .flex-column {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -231,6 +231,7 @@ section {
   color: #fff;
   font-size: 24px;
   margin-bottom: 30px;
+  line-height: 1.2;
 }
 
 .business-main {
@@ -437,9 +438,9 @@ section {
   color: #fff;
 }
 .news-content-wrap li {
-  padding: 20px;
+  padding: 0 20px;
   border-bottom: solid 1px #eee;
-  transition: all 0.5s;
+  cursor: pointer;
 }
 .news-content-wrap li:first-child {
   border-top: solid 1px #eee;
@@ -456,13 +457,10 @@ section {
 .news-content-wrap li:nth-child(4) .news-img {
   background-image: url(../source/img/news-img4.jpg);
 }
-.news-content-wrap li:nth-child(5) .news-img {
-  background-image: url(../source/img/news-img5.jpg);
-}
 
 .news-line p {
   width: calc(100% - 80px);
-  padding-right: 10px;
+  padding: 20px 0;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
@@ -473,53 +471,171 @@ section {
   text-align: center;
 }
 
-.newsActive {
+.news-open {
   display: none;
 }
-.newsActive .news-img {
+.news-open .news-img {
   width: 400px;
-  height: 300px;
+  height: 260px;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center center;
 }
-.newsActive .news-line-wrap {
+.news-open .news-txt {
   width: calc(100% - 400px);
   padding: 0 20px;
 }
-.newsActive .news-line {
+.news-open .news-txt p {
   width: 100%;
-}
-.newsActive .news-line p {
-  text-align: center;
-  font-size: 20px;
-  margin: 0 auto;
-  line-height: 1;
-}
-.newsActive .news-line span {
-  width: 100%;
-  text-align: right;
-  margin: 15px 0;
-}
-.newsActive .news-txt p {
-  width: 100%;
-  line-height: 1.2;
+  font-size: 18px;
+  line-height: 1.4;
   display: -webkit-box;
   word-wrap: break-word;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   overflow: hidden;
 }
-.newsActive .news-txt span {
+.news-open .news-txt span {
   width: 100%;
   text-align: right;
   padding-top: 10px;
 }
-.newsActive .news-txt span a {
+.news-open .news-txt span a {
   color: #fff;
   cursor: pointer;
 }
-.newsActive .news-txt span a:hover {
+.news-open .news-txt span a:hover {
   color: #01b1ec;
+}
+
+.on {
+  cursor: default !important;
+}
+.on .news-open {
+  display: block;
+}
+.on .news-line p {
+  color: #01b1ec;
+  font-size: 20px;
+}
+.on .news-line span {
+  color: #01b1ec;
+}
+
+.move-banner {
+  width: 100%;
+  height: 200px;
+}
+.move-banner .shortcut {
+  position: relative;
+  width: 50%;
+  height: 100%;
+  cursor: pointer;
+}
+.move-banner .shortcut .shortcut-bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(75%);
+}
+.move-banner .shortcut:nth-child(1) .shortcut-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(../source/img/ethics.jpg);
+}
+.move-banner .shortcut:nth-child(2) .shortcut-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-image: url(../source/img/recruit.jpg);
+}
+.move-banner .shortcut:hover .shortcut-bg {
+  filter: brightness(100%);
+}
+.move-banner .shortcut:hover .shortcut-banner {
+  background-color: #01b1ec;
+}
+.move-banner .shortcut:hover .shortcut-banner span {
+  opacity: 1;
+}
+
+.shortcut-banner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  padding: 25px 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 50px;
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold;
+  text-align: center;
+  transition: all 0.3s;
+}
+.shortcut-banner span {
+  opacity: 0;
+  font-size: 34px;
+}
+
+footer {
+  background-color: #181818;
+}
+
+.footer-wrap {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.footer-logo {
+  width: 400px;
+}
+.footer-logo img {
+  width: 100%;
+}
+
+.copyright {
+  margin-top: 10px;
+}
+.copyright p {
+  color: #ddd;
+  padding: 5px 0;
+}
+.copyright p span {
+  width: 70px;
+  display: inline-block;
+}
+
+.footer-right {
+  height: 100%;
+}
+
+.footer-btn {
+  border-radius: 5px;
+  background-color: #001f66;
+  padding: 10px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+.footer-btn a {
+  display: block;
+  color: #fff;
+}
+
+.footer-link select {
+  color: #eee;
+  background-color: transparent;
+  border: solid 1px #eee;
+}
+.footer-link select option {
+  color: #eee;
+  background-color: transparent;
 }
