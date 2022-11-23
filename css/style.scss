@@ -550,6 +550,8 @@ section {
   width: 100%;
   height: 500px;
 
+  overflow: hidden;
+
   .nw-bg {
     position: absolute;
 
@@ -576,13 +578,6 @@ section {
     font-size: 28px;
   }
 
-  .num-content {
-    width: 25%;
-    text-align: center;
-
-    z-index: 5;
-  }
-
   p {
     color: #fff;
     font-size: 38px;
@@ -594,6 +589,34 @@ section {
   .number-top {
     font-size: 42px;
     font-weight: bold;
+  }
+}
+
+.num-content {
+  width: 25%;
+  text-align: center;
+
+  margin-top: 500px;
+
+  z-index: 5;
+
+  transition: all 0.5s;
+}
+
+.mg-reset {
+  //animation: contentUp 1.3s linear;
+  margin-top: 0;
+}
+
+@keyframes contentUp {
+  0% {
+    margin-top: 500px;
+  }
+  80% {
+    margin-top: -50px;
+  }
+  100% {
+    margin-top: 0;
   }
 }
 
