@@ -4,6 +4,7 @@ $(function () {
   business(); // 비즈니스 움직임
   product(); // 상품 소개
   count(); // 숫자 올리기
+  about(); // 숫자 보이기
   newsList(); // 뉴스리스트
 });
 
@@ -102,16 +103,22 @@ function product() {
       $(this).find(".product-text").removeClass("pt-hover");
     }
   );
-
-  // if(wd.scrollTop() >= 1060) {
-  //   product.
-  // }
 }
 
 function count() {
   $(".counter").counterUp({
     delay: 10,
     time: 1000,
+  });
+}
+
+function about() {
+  wd.on("scroll", function () {
+    if (wd.scrollTop() >= 1900) {
+      $(".num-content").addClass("mg-reset");
+    } else {
+      $(".num-content").removeClass("mg-reset");
+    }
   });
 }
 
