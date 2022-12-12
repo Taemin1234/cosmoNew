@@ -54,10 +54,7 @@
 
 $main-color1: #01b1ec;
 $main-color2: #001f66;
-$sub-color1: #243d78;
-$sub-color2: #4b7ff9;
-$sub-color3: #004af7;
-$sub-color4: #003bc4;
+
 $sub-bg: #181818;
 $battery-full: #32ff2e;
 $battery-low: #e60109;
@@ -76,6 +73,10 @@ $battery-low: #e60109;
 }
 .flex-column {
   @extend %flex-column;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
 }
 
 /* 헤더 */
@@ -193,7 +194,7 @@ $battery-low: #e60109;
   z-index: 15;
 
   background-color: #fff;
-  border-top: solid 1px $main-color2;
+  border-top: solid 1px #eee;
 }
 
 .lnb {
@@ -223,7 +224,13 @@ $battery-low: #e60109;
 /* 내용 */
 
 section {
-  background-color: #181818;
+  &:nth-child(odd) {
+    background-color: #181818;
+  }
+
+  &:nth-child(even) {
+    background-color: #151515;
+  }
 }
 
 .full {
@@ -265,6 +272,10 @@ section {
 
       font-size: 0;
     }
+
+    .slick-active {
+      background-color: $main-color1;
+    }
   }
 }
 
@@ -292,14 +303,14 @@ section {
   left: 10%;
 
   h2 {
-    font-size: 36px;
+    font-size: 48px;
     color: #fff;
 
     margin-bottom: 15px;
   }
 
   p {
-    font-size: 24px;
+    font-size: 28px;
     color: #fff;
   }
 }
@@ -339,7 +350,11 @@ section {
 }
 
 .business-title-wrap {
-  display: none;
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
 }
 
 .business-title {
@@ -371,6 +386,7 @@ section {
   color: #fff;
 
   transition: all 0.8s;
+  z-index: 5;
 
   h4 {
     font-size: 28px;
@@ -391,7 +407,7 @@ section {
 .bm-img {
   position: absolute;
 
-  width: 50%;
+  width: 720px;
   height: 410px;
 
   top: 65px;
@@ -704,6 +720,7 @@ section {
     width: 400px;
     height: 260px;
 
+    margin-bottom: 10px;
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center center;
@@ -870,6 +887,10 @@ footer {
   padding: 25px 0 30px;
 }
 
+.footer-left {
+  width: 50%;
+}
+
 .footer-logo {
   width: 280px;
 
@@ -896,6 +917,7 @@ footer {
 .footer-right {
   @extend %flex-column;
   justify-content: space-between;
+  width: 50%;
   height: 100%;
 }
 
@@ -995,5 +1017,20 @@ footer {
     font-size: 14px;
 
     cursor: pointer;
+  }
+}
+
+@media (max-width: 1200px) {
+  .page-wrap {
+    padding: 60px 20px;
+  }
+
+  .bm-img {
+    img {
+      filter: opacity(50%);
+    }
+  }
+
+  .footer-btn-wrap {
   }
 }
