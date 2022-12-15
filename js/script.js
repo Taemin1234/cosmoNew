@@ -1,5 +1,6 @@
 $(function () {
   webNavbar(); // 웹페이지 상단바
+  mobilenav(); // 모바일 메뉴바
   slickJs(); // 메인화면 슬라이드
   business(); // 비즈니스 움직임
   product(); // 상품 소개
@@ -15,6 +16,7 @@ function webNavbar() {
   let hdTop = $(".header-top");
   let lnbLine = $(".lnb-line");
   let menuNav = $(".menu-nav li");
+  let mhclk = $(".mheader-clk");
 
   //마우스를 올리면 상세목록 내려오기
   $(".wNav-btn").on("mouseover", function () {
@@ -26,16 +28,7 @@ function webNavbar() {
   });
 
   // 스크롤 시 내비바 변동
-  wd.on("mousewheel", function (e) {
-    var wheel = e.originalEvent.wheelDelta;
-
-    if (wheel >= 80) {
-      hdTop.removeClass("header-up").addClass("header-down");
-    } else {
-      hdTop.removeClass("header-down").addClass("header-up");
-      headSlide.hide();
-    }
-  });
+  scrollNav();
 
   // 상세목록의 호버 시 전체목록 위치표시
   for (let i = 0; i < lnbLine.length; i++) {
@@ -47,6 +40,52 @@ function webNavbar() {
       menuNav.eq(i).removeClass("nav-under");
     });
   }
+}
+
+function scrollNav() {
+  // 스크롤 시 내비바 변동
+
+  let hdTop = $(".header-top");
+  let headSlide = $(".header-slide");
+
+  wd.on("mousewheel", function (e) {
+    var wheel = e.originalEvent.wheelDelta;
+
+    if (wheel >= 80) {
+      hdTop.removeClass("header-up").addClass("header-down");
+    } else {
+      hdTop.removeClass("header-down").addClass("header-up");
+      headSlide.hide();
+    }
+  });
+}
+
+function mobilenav() {
+  let mmenu = $(".mMenu-nav");
+  let mhclk = $(".mheader-clk");
+  let mhlist = $(".mheader-list");
+  let lnbline = $(".lnb-line");
+
+  mmenu.on("click", function () {
+    mhclk.toggleClass("mh-active");
+    mmenu.toggleClass("mMenu-nav-clk");
+  });
+
+  // if (mhclk.hasClass("mh-active")) {
+  //   $(".header-up").css("transform", "translateY(0)");
+  // } else {
+  //   console.log("zzz");
+  // }
+
+  mhlist.on("click", function () {
+    if ($(this).hasClass("listclk")) {
+      $(this).find(lnbline).slideUp();
+      $(this).removeClass("listclk");
+    } else {
+      $(this).find(lnbline).slideDown();
+      $(this).addClass("listclk");
+    }
+  });
 }
 
 function slickJs() {
@@ -67,25 +106,25 @@ function business() {
 
   wd.on("scroll", function () {
     //450
-    let scroll = $(document).scrollTop();
-    console.log(scroll);
+    // let scroll = $(document).scrollTop();
+    // console.log(scroll);
 
     if (wd.scrollTop() >= 450) {
       businessTit.addClass("left");
       businessCont.addClass("left");
       bmImg.addClass("right");
+      bstitWrap.addClass("visible");
 
-      bstitWrap.fadeIn(800, "linear");
       bcDti.fadeIn(800, "linear");
       bmImg.find("img").fadeIn(800, "linear");
     } else if (wd.scrollTop() <= 145) {
       businessTit.removeClass("left");
       businessCont.removeClass("left");
       bmImg.removeClass("right");
+      bstitWrap.removeClass("visible");
 
-      bstitWrap.fadeOut();
-      bcDti.fadeOut();
-      bmImg.find("img").fadeOut();
+      bcDti.hide();
+      bmImg.find("img").hide();
     }
   });
 }
