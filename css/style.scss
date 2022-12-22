@@ -79,6 +79,10 @@ body {
   font-family: "Noto Sans KR", sans-serif;
 }
 
+.bodyoverflow {
+  overflow: hidden;
+}
+
 /* 헤더 */
 
 .header-top {
@@ -457,7 +461,7 @@ section {
   max-width: 1440px;
 
   margin: 0 auto;
-  padding: 60px 0;
+  padding: 60px 10px;
 }
 
 .page-title {
@@ -692,7 +696,7 @@ section {
 }
 
 .pt-hover {
-  bottom: 130px;
+  bottom: 30%;
 }
 
 // number
