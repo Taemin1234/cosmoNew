@@ -68,14 +68,16 @@ function mobilenav() {
 
   mmenu.on("click", function () {
     mhclk.toggleClass("mh-active");
+    if (mhclk.hasClass("mh-active")) {
+      wd.off("mousewheel");
+      console.log("scr");
+    } else {
+      scrollNav();
+    }
     mmenu.toggleClass("mMenu-nav-clk");
-  });
 
-  // if (mhclk.hasClass("mh-active")) {
-  //   $(".header-up").css("transform", "translateY(0)");
-  // } else {
-  //   console.log("zzz");
-  // }
+    $("body").toggleClass("bodyoverflow");
+  });
 
   mhlist.on("click", function () {
     if ($(this).hasClass("listclk")) {
